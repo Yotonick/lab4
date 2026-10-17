@@ -1,0 +1,114 @@
+/* 1. Универсальный селектор */
+* {
+  box-sizing: border-box;
+  font-family: Arial, Helvetica, sans-serif;
+  color: #333;
+}
+
+body {
+  background: #ececec;
+  padding: 20px;
+}
+
+/* 2. Селектор по тегу */
+h1 {
+  color: red;
+}
+
+h3 {
+  color: pink;
+}
+
+footer {
+  margin-top: 30px;
+}
+
+/* 3. Селекторы по классу */
+.link {
+  color: green;          /* Зеленый */
+}
+
+.special-link {
+  color: blue;           /* Синий (идет после .link, поэтому перекрывает его) */
+}
+
+.post {
+  color: purple;         /* Фиолетовый (Пост 2) */
+}
+
+.note {
+  color: maroon;         /* Бордовый */
+}
+
+.highlighted {
+  color: black;          /* Черный */
+}
+
+/* 4. Селектор по идентификатору */
+#first-post {
+  color: orange;         /* Оранжевый: id сильнее класса .post */
+}
+
+/* 5. Атрибутные селекторы */
+input[placeholder="Белый"] {
+  background: #444;
+  border: 1px solid #222;
+  padding: 6px;
+}
+
+input[placeholder="Белый"]::placeholder {
+  color: white;          /* Белый */
+  opacity: 1;
+}
+
+button[type="submit"] {
+  color: black;          /* Черный */
+  padding: 6px 14px;
+  cursor: pointer;
+}
+
+/* 6. Псевдоклассы и псевдоэлементы */
+.nav-list li:nth-child(3) a {
+  color: yellow;         /* Желтый */
+  text-shadow: 0 0 2px #777;
+}
+
+.color-list li:nth-child(2) {
+  color: brown;          /* Коричневый */
+}
+
+.link:hover {
+  text-decoration: underline;
+}
+
+.submit-btn:hover {
+  background: #ddd;
+}
+
+.highlighted::before {
+  content: "★ ";
+  color: black;
+}
+
+/* 7. Селекторы потомков */
+.nav-list li {
+  display: inline-block;
+  margin-right: 15px;
+}
+
+.important-widget h3 {
+  color: maroon;         /* Бордовый заголовок виджета */
+}
+
+/* 8. Селекторы соседей */
+.color-list li:first-child {
+  color: gray;           /* Серый */
+}
+
+#first-post h2 + p {
+  color: orange;         /* Оранжевый абзац после заголовка */
+}
+
+.post h2 + p {
+  margin-top: 4px;
+}
